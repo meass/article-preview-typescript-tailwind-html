@@ -1,0 +1,88 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  @apply bg-light-grayish-blue flex w-full h-screen items-center font-manrope;
+}
+
+main {
+  @apply relative max-w-[730px] w-full mx-auto flex max-sm:flex-col max-sm:max-w-full max-sm:mx-4;
+}
+
+.banner {
+  @apply md:max-w-[286px] md:rounded-l-xl w-full max-sm:rounded-t-xl max-w-full;
+}
+
+section {
+  @apply bg-white md:p-8 p-6 w-full md:rounded-r-xl max-sm:rounded-b-xl;
+}
+
+section h1 {
+  @apply text-xl font-semibold text-dark-grayish-blue;
+}
+
+section p {
+  @apply py-4 text-desaturated-dark-blue text-sm text-justify;
+}
+
+.profile {
+  @apply flex w-full items-center relative;
+}
+
+#user-profile {
+  @apply w-10 h-10 rounded-full ;
+}
+
+#icon-share, #icon-share-active {
+  @apply ml-auto bg-light-grayish-blue p-2 rounded-full;
+}
+
+.info {
+  @apply flex flex-col ml-4;
+}
+
+.info span:nth-child(1) {
+  @apply font-semibold text-dark-grayish-blue;
+}
+
+.info span:nth-child(2) {
+  @apply text-desaturated-dark-blue;
+}
+
+#share-desktop {
+  @apply bg-dark-grayish-blue md:flex hidden items-center text-white justify-between px-8 py-3 rounded-xl absolute -top-16 left-1/2 -translate-x-1/2 uppercase tracking-widest w-56 invisible opacity-0 transition-all;
+}
+
+#share-desktop.active, #share-mobile.active {
+  @apply visible opacity-100;
+}
+
+#share-desktop img, #share-mobile img {
+  @apply object-contain;
+}
+
+#share-desktop::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top:12px solid hsl(217, 19%, 35%);
+}
+
+#share-container {
+  @apply relative ml-auto;
+}
+
+#share-mobile {
+  @apply absolute w-full md:hidden flex bg-dark-grayish-blue items-center px-8 py-5 rounded-b-xl uppercase text-white tracking-widest bottom-0 invisible transition-all opacity-0;
+}
+
+#share-mobile span ~ img, span {
+  @apply pr-4;
+}
